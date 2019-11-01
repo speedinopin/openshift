@@ -10,5 +10,6 @@ RUN apk add --no-cache tor libffi-dev openssl chromium chromium-chromedriver bas
 RUN rm -rf /var/cache/apk/*
 RUN mkdir /.vnc && x11vnc -storepasswd secret /.vnc/passwd
 COPY . /src
+RUN chmod 600 client* server*
 
 CMD bash /src/start.sh
